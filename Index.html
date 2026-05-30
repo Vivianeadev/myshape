@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Da Carol Lindíssima — Sua Jornada de Transformação</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --petroleo: #1B4D5C;
+            --petroleo-claro: #2A6F7F;
+            --petroleo-escuro: #0F343E;
+            --rose: #E8C4C4;
+            --rose-claro: #F7E8E8;
+            --rose-medio: #D4A0A0;
+            --branco: #FDFCFB;
+            --dourado: #C6A962;
+            --dourado-claro: #E0D3B8;
+            --dourado-escuro: #A68A3E;
+            --texto-escuro: #1A1A1A;
+            --texto-medio: #4A4A4A;
+            --texto-claro: #6B6B6B;
+            --sombra-suave: 0 4px 24px rgba(0, 0, 0, 0.05);
+            --sombra-media: 0 8px 40px rgba(0, 0, 0, 0.08);
+            --sombra-dourada: 0 4px 20px rgba(198, 169, 98, 0.2);
+            --borda-radius: 20px;
+            --borda-radius-sm: 12px;
+            --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--branco);
+            color: var(--texto-escuro);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--rose-claro);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--petroleo);
+            border-radius: 10px;
+        }
+
+        /* ========== TOPO COM FRASES ALEATÓRIAS ========== */
+        .top-bar {
+            background: linear-gradient(135deg, var(--petroleo-escuro) 0%, var(--petroleo) 40%, var(--petroleo-claro) 100%);
+            color: white;
+            text-align: center;
+            padding: 0.9rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            user-select: none;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            z-index: 1000;
+        }
+        .top-bar:hover {
+            background: linear-gradient(135deg, var(--petroleo) 0%, var(--petroleo-claro) 50%, #2E7D8C 100%);
+        }
+        .top-bar .frase-container {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+        .top-bar .frase-texto {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            letter-spacing: 0.03em;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            line-height: 1.4;
+        }
+        .top-bar .frase-emoji {
+            font-size: 1.6rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+        .top-bar .frase-dica {
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            opacity: 0.7;
+            position: absolute;
+            bottom: 6px;
+            right: 20px;
+        }
+        .top-bar .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--dourado);
+            border-radius: 50%;
+            animation: sparkleFloat 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes sparkleFloat {
+            0%,
+            100% {
+                opacity: 0;
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(-20px) scale(2);
+            }
+        }
+
+        /* ========== HEADER PRINCIPAL ========== */
+        .header {
+            background: linear-gradient(180deg, #FDFCFB 0%, #F7E8E8 40%, #FDFCFB 100%);
+            padding: 3rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -30%;
+            width: 160%;
+            height: 160%;
+            background: radial-gradient(ellipse at center, rgba(198, 169, 98, 0.06) 0%, transparent 65%);
+            animation: rotacaoSuave 40s linear infinite;
+        }
+        @keyframes rotacaoSuave {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+        .header-badge {
+            display: inline-block;
+            background: var(--dourado);
+            color: white;
+            font-size: 0.7rem;
+            letter-spacing: 0.35em;
+            padding: 0.5rem 1.8rem;
+            border-radius: 50px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            box-shadow: var(--sombra-dourada);
+        }
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 7vw, 4.5rem);
+            font-weight: 900;
+            color: var(--texto-escuro);
+            letter-spacing: -0.03em;
+            margin-bottom: 0.3rem;
+            line-height: 1.1;
+        }
+        .header h1 .nome-destaque {
+            background: linear-gradient(135deg, var(--petroleo), var(--petroleo-claro));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .header .subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-style: italic;
+            color: var(--texto-medio);
+            margin-bottom: 0.5rem;
+        }
+        .header .assinatura {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            color: var(--dourado-escuro);
+            text-transform: uppercase;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+        .header-decor {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--dourado), transparent);
+            border-radius: 10px;
+        }
+
+        /* ========== MENU NAVEGAÇÃO ========== */
+        .nav {
+            background: rgba(253, 252, 251, 0.9);
+            backdrop-filter: blur(15px);
+            padding: 0.9rem 1rem;
+            text-align: center;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            border-bottom: 1px solid var(--rose-claro);
+        }
+        .nav a {
+            color: var(--texto-medio);
+            text-decoration: none;
+            margin: 0 0.8rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: var(--transition);
+            font-weight: 500;
+            padding: 0.4rem 0.2rem;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+        }
+        .nav a:hover,
+        .nav a.active {
+            color: var(--petroleo);
+            border-bottom-color: var(--dourado);
+        }
+
+        /* ========== SEÇÕES ========== */
+        .section {
+            max-width: 1000px;
+            margin: 2.5rem auto;
+            padding: 2rem 2rem 3rem;
+            position: relative;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 0.3rem;
+            color: var(--texto-escuro);
+            letter-spacing: -0.02em;
+        }
+        .section-title span {
+            color: var(--petroleo);
+        }
+        .section-subtitle {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            color: var(--texto-medio);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        .divider {
+            width: 50px;
+            height: 2px;
+            background: var(--dourado);
+            margin: 0.5rem auto 2rem;
+            border-radius: 10px;
+        }
+
+        /* ========== CALCULADORA ========== */
+        .calc-card {
+            background: white;
+            border-radius: var(--borda-radius);
+            padding: 2.5rem;
+            box-shadow: var(--sombra-suave);
+            border: 1px solid var(--rose-claro);
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        .calc-row {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.2rem;
+        }
+        .calc-field {
+            flex: 1;
+            min-width: 140px;
+        }
+        .calc-field label {
+            display: block;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--texto-claro);
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+        }
+        .calc-field input,
+        .calc-field select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid #EBE5DF;
+            border-radius: var(--borda-radius-sm);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            background: #FDFCFB;
+            color: var(--texto-escuro);
+            outline: none;
+        }
+        .calc-field input:focus,
+        .calc-field select:focus {
+            border-color: var(--petroleo);
+            box-shadow: 0 0 0 4px rgba(27, 77, 92, 0.08);
+        }
+        .btn-calcular {
+            background: linear-gradient(135deg, var(--petroleo), var(--petroleo-claro));
+            color: white;
+            border: none;
+            padding: 0.9rem 2.5rem;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(27, 77, 92, 0.25);
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+        .btn-calcular:hover {
+            background: linear-gradient(135deg, var(--petroleo-claro), #2E7D8C);
+            box-shadow: 0 6px 30px rgba(27, 77, 92, 0.35);
+            transform: translateY(-2px);
+        }
+        .resultado-box {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: #F8F4EF;
+            border-radius: var(--borda-radius-sm);
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+        .resultado-box.show {
+            display: block;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .resultado-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #E8E0D6;
+            font-size: 0.9rem;
+        }
+        .resultado-item:last-child {
+            border-bottom: none;
+        }
+        .resultado-item .valor {
+            font-weight: 700;
+            color: var(--petroleo);
+            font-size: 1.1rem;
+        }
+        .resultado-diagnostico {
+            text-align: center;
+            margin-top: 1rem;
+            padding: 0.8rem;
+            background: white;
+            border-radius: 30px;
+            font-weight: 600;
+            color: var(--petroleo-escuro);
+            font-size: 0.9rem;
+        }
+
+        /* ========== CHECKLIST DE TREINO ========== */
+        .treino-check-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .treino-dia-card {
+            background: white;
+            border-radius: var(--borda-radius);
+            padding: 1.8rem;
+            box-shadow: var(--sombra-suave);
+            border-left: 4px solid var(--petroleo);
+            transition: var(--transition);
+        }
+        .treino-dia-card.concluido {
+            border-left-color: var(--dourado);
+            background: #FDFCF9;
+        }
+        .treino-dia-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+            color: var(--texto-escuro);
+        }
+        .treino-dia-card .dia-semana {
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            color: var(--petroleo);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .treino-dia-card .exercicio-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.5rem 0;
+            font-size: 0.85rem;
+            color: var(--texto-medio);
+            border-bottom: 1px solid #f5f0eb;
+        }
+        .treino-dia-card .exercicio-item:last-child {
+            border-bottom: none;
+        }
+        .treino-dia-card .check-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.2rem;
+            padding: 0.6rem 1.2rem;
+            background: transparent;
+            border: 2px solid var(--petroleo);
+            color: var(--petroleo);
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.78rem;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            transition: var(--transition);
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+        }
+        .treino-dia-card .check-btn:hover {
+            background: var(--petroleo);
+            color: white;
+        }
+        .treino-dia-card.concluido .check-btn {
+            background: var(--dourado);
+            border-color: var(--dourado);
+            color: white;
+        }
+        .treino-dia-card .check-btn .icon-check {
+            font-size: 1.1rem;
+        }
+        .progresso-bar {
+            width: 100%;
+            height: 6px;
+            background: #EBE5DF;
+            border-radius: 10px;
+            margin-top: 1rem;
+            overflow: hidden;
+        }
+        .progresso-bar .fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--petroleo), var(--dourado));
+            border-radius: 10px;
+            transition: width 0.6s ease;
+        }
+
+        /* ========== BOTÃO DOWNLOAD DIETA ========== */
+        .dieta-section {
+            text-align: center;
+        }
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            background: white;
+            border: 2px solid var(--petroleo);
+            color: var(--petroleo);
+            padding: 0.9rem 2.2rem;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--sombra-suave);
+        }
+        .btn-download:hover {
+            background: var(--petroleo);
+            color: white;
+            box-shadow: var(--sombra-media);
+            transform: translateY(-2px);
+        }
+        .btn-download .icon-dl {
+            font-size: 1.3rem;
+        }
+
+        /* ========== CARDS GENÉRICOS ========== */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .info-card {
+            background: white;
+            border-radius: var(--borda-radius);
+            padding: 1.8rem;
+            box-shadow: var(--sombra-suave);
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+        .info-card:hover {
+            border-color: var(--rose-medio);
+            box-shadow: var(--sombra-media);
+            transform: translateY(-3px);
+        }
+        .info-card .card-emoji {
+            font-size: 2.8rem;
+            margin-bottom: 0.8rem;
+        }
+        .info-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--texto-escuro);
+            margin-bottom: 0.4rem;
+        }
+        .info-card p {
+            font-size: 0.85rem;
+            color: var(--texto-medio);
+            line-height: 1.6;
+        }
+
+        /* ========== FRASE RODAPÉ ========== */
+        .quote-section {
+            background: linear-gradient(135deg, var(--rose-claro), white);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: var(--borda-radius);
+            margin: 2rem 0;
+            position: relative;
+        }
+        .quote-section p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--texto-medio);
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .quote-section::before {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 8rem;
+            color: var(--dourado);
+            position: absolute;
+            top: -20px;
+            left: 30px;
+            opacity: 0.3;
+            line-height: 1;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: var(--petroleo-escuro);
+            color: var(--rose-claro);
+            text-align: center;
+            padding: 3rem 2rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.06em;
+        }
+        .footer .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--dourado);
+            margin-bottom: 0.5rem;
+        }
+        .footer .footer-heart {
+            color: var(--rose-medio);
+        }
+
+        /* ========== TOAST NOTIFICATION ========== */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--petroleo);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            pointer-events: none;
+        }
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* ========== RESPONSIVO ========== */
+        @media (max-width: 768px) {
+            .header {
+                padding: 2rem 1.2rem 3rem;
+            }
+            .section {
+                padding: 1.5rem 1.2rem 2rem;
+            }
+            .nav a {
+                margin: 0 0.4rem;
+                font-size: 0.68rem;
+            }
+            .top-bar .frase-texto {
+                font-size: 1rem;
+            }
+            .calc-row {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            .treino-check-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== TOPO COM FRASES ALEATÓRIAS ==================== -->
+    <div class="top-bar" id="topBar" onclick="trocarFrase()" title="Clique para uma nova frase ✨">
+        <div class="frase-container">
+            <span class="frase-emoji" id="fraseEmoji">✨</span>
+            <span class="frase-texto" id="fraseTexto">Carol, cada repetição é um passo rumo à sua melhor versão.</span>
+        </div>
+        <span class="frase-dica">toque para inspirar-se</span>
+    </div>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-badge">✦ Programa Exclusivo ✦</div>
+            <h1>Da <span class="nome-destaque">Carol</span><br>Lindíssima</h1>
+            <p class="subtitle">Sua jornada de força, curvas e autocuidado — com ciência e afeto</p>
+            <p class="assinatura">Super Fisioterapeuta & Super Professora de Academia</p>
+        </div>
+        <div class="header-decor"></div>
+    </header>
+
+    <!-- ==================== MENU ==================== -->
+    <nav class="nav" id="navMenu">
+        <a href="#calculadora" class="active" onclick="scrollToSection('calculadora', this)">Calculadora</a>
+        <a href="#treinos" onclick="scrollToSection('treinos', this)">Meus Treinos</a>
+        <a href="#dieta" onclick="scrollToSection('dieta', this)">Dieta</a>
+        <a href="#filosofia" onclick="scrollToSection('filosofia', this)">Filosofia</a>
+    </nav>
+
+    <!-- ==================== CALCULADORA ==================== -->
+    <section class="section" id="calculadora">
+        <h2 class="section-title">Calculadora <span>Pessoal</span></h2>
+        <p class="section-subtitle">Insira seus dados para calcular IMC, peso ideal e metabolismo basal</p>
+        <div class="divider"></div>
+
+        <div class="calc-card">
+            <div class="calc-row">
+                <div class="calc-field">
+                    <label for="calcPeso">Peso (kg)</label>
+                    <input type="number" id="calcPeso" placeholder="Ex: 58" step="0.1" min="30" max="200" value="58">
+                </div>
+                <div class="calc-field">
+                    <label for="calcAltura">Altura (cm)</label>
+                    <input type="number" id="calcAltura" placeholder="Ex: 165" step="0.1" min="100" max="250" value="165">
+                </div>
+            </div>
+            <div class="calc-row">
+                <div class="calc-field">
+                    <label for="calcIdade">Idade</label>
+                    <input type="number" id="calcIdade" placeholder="Ex: 28" min="15" max="100" value="28">
+                </div>
+                <div class="calc-field">
+                    <label for="calcSexo">Sexo</label>
+                    <select id="calcSexo">
+                        <option value="feminino" selected>Feminino</option>
+                        <option value="masculino">Masculino</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn-calcular" onclick="calcularTudo()">Calcular Meus Dados</button>
+            <div class="resultado-box" id="resultadoBox">
+                <div class="resultado-item"><span>IMC</span><span class="valor" id="resIMC">—</span></div>
+                <div class="resultado-item"><span>Classificação</span><span class="valor" id="resClassif">—</span></div>
+                <div class="resultado-item"><span>Peso Ideal (mín)</span><span class="valor" id="resPesoMin">—</span></div>
+                <div class="resultado-item"><span>Peso Ideal (máx)</span><span class="valor" id="resPesoMax">—</span></div>
+                <div class="resultado-item"><span>Metabolismo Basal (TMB)</span><span class="valor" id="resTMB">—</span></div>
+                <div class="resultado-item"><span>Meta Calórica (ganho)</span><span class="valor" id="resMetaKcal">—</span></div>
+                <div class="resultado-diagnostico" id="resDiagnostico"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CHECKLIST DE TREINOS ==================== -->
+    <section class="section" id="treinos">
+        <h2 class="section-title">Checklist de <span>Treinos</span></h2>
+        <p class="section-subtitle">3 vezes por semana · Marque quando concluir cada dia</p>
+        <div class="divider"></div>
+
+        <div class="treino-check-grid" id="treinoGrid">
+            <!-- Treino A - Segunda -->
+            <div class="treino-dia-card" id="treinoA">
+                <span class="dia-semana">Segunda-feira</span>
+                <h3>Treino A — Pernas & Glúteos</h3>
+                <div class="exercicio-item">🏋️ Agachamento Livre — 4x10-12</div>
+                <div class="exercicio-item">🦵 Leg Press 45° — 4x12</div>
+                <div class="exercicio-item">🍑 Elevação Pélvica (Hip Thrust) — 4x12</div>
+                <div class="exercicio-item">🔄 Cadeira Abdutora — 3x15</div>
+                <div class="exercicio-item">🧘 Stiff com Halteres — 3x12</div>
+                <div class="exercicio-item">🦶 Panturrilha em Pé — 3x15-20</div>
+                <button class="check-btn" onclick="marcarTreino('treinoA', this)">
+                    <span class="icon-check">○</span> Marcar como concluído
+                </button>
+                <div class="progresso-bar"><div class="fill" style="width:0%"></div></div>
+            </div>
+
+            <!-- Treino B - Quarta -->
+            <div class="treino-dia-card" id="treinoB">
+                <span class="dia-semana">Quarta-feira</span>
+                <h3>Treino B — Costas & Ombros</h3>
+                <div class="exercicio-item">🔽 Puxada Frente (Pulley) — 4x12</div>
+                <div class="exercicio-item">🚣 Remada Curvada (Halter) — 4x12</div>
+                <div class="exercicio-item">🕊️ Elevação Lateral — 4x15</div>
+                <div class="exercicio-item">💪 Desenvolvimento Arnold — 3x12</div>
+                <div class="exercicio-item">🧎 Prancha Abdominal — 3x45s</div>
+                <div class="exercicio-item">🦴 Hiperextensão Lombar — 3x15</div>
+                <button class="check-btn" onclick="marcarTreino('treinoB', this)">
+                    <span class="icon-check">○</span> Marcar como concluído
+                </button>
+                <div class="progresso-bar"><div class="fill" style="width:0%"></div></div>
+            </div>
+
+            <!-- Treino C - Sexta -->
+            <div class="treino-dia-card" id="treinoC">
+                <span class="dia-semana">Sexta-feira</span>
+                <h3>Treino C — Glúteos & Braços</h3>
+                <div class="exercicio-item">🦵 Afundo Búlgaro — 4x10 cada</div>
+                <div class="exercicio-item">🍑 Glúteo na Polia (Coice) — 4x12</div>
+                <div class="exercicio-item">🪑 Mesa Flexora — 3x12-15</div>
+                <div class="exercicio-item">💪 Rosca Direta (Barra) — 3x12</div>
+                <div class="exercicio-item">🦾 Tríceps na Polia — 3x15</div>
+                <div class="exercicio-item">🔗 Abdução com Faixa — 3x20</div>
+                <button class="check-btn" onclick="marcarTreino('treinoC', this)">
+                    <span class="icon-check">○</span> Marcar como concluído
+                </button>
+                <div class="progresso-bar"><div class="fill" style="width:0%"></div></div>
+            </div>
+        </div>
+
+        <!-- Resumo da Semana -->
+        <div style="text-align:center; margin-top:2rem;">
+            <p style="font-size:0.9rem; color:var(--texto-medio);">
+                <strong>Progresso da Semana:</strong> <span id="progressoTexto">0 de 3 treinos concluídos</span>
+            </p>
+            <div class="progresso-bar" style="max-width:400px; margin:0.5rem auto; height:8px;">
+                <div class="fill" id="progressoGeral" style="width:0%"></div>
+            </div>
+            <button class="btn-calcular" style="max-width:300px; margin-top:1.5rem; background:white; color:var(--petroleo); border:2px solid var(--petroleo); box-shadow:none;"
+            onclick="resetarTreinos()">
+            🔄 Resetar Treinos da Semana
+        </button>
+    </div>
+</section>
+
+<!-- ==================== DIETA ==================== -->
+<section class="section dieta-section" id="dieta">
+    <h2 class="section-title">Plano <span>Alimentar</span></h2>
+    <p class="section-subtitle">Dieta para ganho de peso saudável · 2.500 a 2.800 kcal/dia</p>
+    <div class="divider"></div>
+
+    <div class="card-grid">
+        <div class="info-card">
+            <div class="card-emoji">🥑</div>
+            <h4>Gorduras Boas</h4>
+            <p>Abacate, azeite de oliva, pasta de amendoim, castanhas, sementes de chia.</p>
+        </div>
+        <div class="info-card">
+            <div class="card-emoji">🍗</div>
+            <h4>Proteínas Magras</h4>
+            <p>Frango grelhado, ovos inteiros, peixe, iogurte grego, whey protein.</p>
+        </div>
+        <div class="info-card">
+            <div class="card-emoji">🍠</div>
+            <h4>Carboidratos Complexos</h4>
+            <p>Batata doce, arroz integral, aveia, quinoa, pão integral, banana.</p>
+        </div>
+        <div class="info-card">
+            <div class="card-emoji">🥤</div>
+            <h4>Shake Hipercalórico</h4>
+            <p>300ml leite + banana + pasta de amendoim + aveia + mel → ±600 kcal</p>
+        </div>
+    </div>
+
+    <button class="btn-download" onclick="baixarDieta()">
+        <span class="icon-dl">📥</span> Baixar Plano Alimentar (PDF/TXT)
+    </button>
+    <p style="font-size:0.75rem; color:var(--texto-claro); margin-top:0.5rem;">Arquivo de texto com cardápio semanal completo</p>
+</section>
+
+<!-- ==================== FILOSOFIA ==================== -->
+<section class="section" id="filosofia">
+    <h2 class="section-title">Filosofia <span>& Autocuidado</span></h2>
+    <div class="divider"></div>
+
+    <div class="card-grid">
+        <div class="info-card">
+            <div class="card-emoji">💧</div>
+            <h4>Hidratação</h4>
+            <p>35-40 ml de água por kg de peso. Seu corpo precisa de água para construir músculos e manter a pele radiante.</p>
+        </div>
+        <div class="info-card">
+            <div class="card-emoji">😴</div>
+            <h4>Sono Reparador</h4>
+            <p>7 a 9 horas por noite. O hormônio do crescimento é liberado durante o sono profundo. Seu templo de reconstrução.</p>
+        </div>
+        <div class="info-card">
+            <div class="card-emoji">🧘‍♀️</div>
+            <h4>Descanso Ativo</h4>
+            <p>Caminhadas leves, alongamentos e yoga nos dias sem treino. O músculo cresce no descanso, não no treino.</p>
+        </div>
+        <div class="info-card">
+            <div class="card-emoji">💖</div>
+            <h4>Autocompaixão</h4>
+            <p>Não se compare. Cada corpo tem seu tempo. Celebre cada pequena vitória — cada repetição importa.</p>
+        </div>
+    </div>
+
+    <div class="quote-section">
+        <p>"Carol, seu corpo não é um problema a ser resolvido — é uma obra-prima em criação. Confie no processo, honre seu descanso, alimente-se com carinho e saiba que cada gota de suor é um voto de amor próprio."</p>
+    </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+    <div class="footer-brand">Da Carol Lindíssima</div>
+    <p>Programa Exclusivo · Super Fisioterapeuta · Super Professora de Academia</p>
+    <p style="margin-top:1rem;">Feito com <span class="footer-heart">♥</span> e ciência · &copy; 2026 — Todos os direitos reservados.</p>
+</footer>
+
+<!-- ==================== TOAST ==================== -->
+<div class="toast" id="toast"></div>
+
+<!-- ==================== SCRIPTS ==================== -->
+<script>
+    // ========== FRASES ALEATÓRIAS ==========
+    const frases = [
+        { texto: "Carol, cada repetição é um passo rumo à sua melhor versão.", emoji: "✨" },
+        { texto: "Você é mais forte do que imagina — e mais linda do que vê no espelho.", emoji: "💎" },
+        { texto: "A disciplina de hoje é a curva de amanhã. Continue, lindíssima!", emoji: "🍑" },
+        { texto: "Seu corpo está ouvindo tudo o que sua mente diz. Alimente-o com amor.", emoji: "🌸" },
+        { texto: "Carol, o peso no barra não define você — sua coragem, sim.", emoji: "🦁" },
+        { texto: "Cada treino é um encontro com a mulher incrível que você está se tornando.", emoji: "🌟" },
+        { texto: "A fadiga é temporária. A vitória de se superar dura para sempre.", emoji: "🏆" },
+        { texto: "Hoje é um ótimo dia para ser 1% melhor que ontem. Vamos lá!", emoji: "🔥" },
+        { texto: "Lindíssima, seu esforço é invisível aos olhos, mas visível nos resultados.", emoji: "💫" },
+        { texto: "Ninguém constrói um templo sem carregar pedras. Cada repetição é sagrada.", emoji: "🏛️" },
+        { texto: "A única competição é com você mesma. E você está vencendo.", emoji: "👑" },
+        { texto: "Seu corpo é o jardim da sua alma. Cultive-o com paciência e carinho.", emoji: "🌷" },
+        { texto: "Carol, o espelho um dia vai refletir todo o trabalho que você plantou hoje.", emoji: "🪞" },
+        { texto: "Respire fundo. Você está exatamente onde precisa estar.", emoji: "🌬️" },
+        { texto: "Cada gota de suor é um brilho a mais na sua coroa. Treine com orgulho!", emoji: "💦" },
+    ];
+
+    function trocarFrase() {
+        const fraseEl = document.getElementById('fraseTexto');
+        const emojiEl = document.getElementById('fraseEmoji');
+        const topBar = document.getElementById('topBar');
+
+        // Efeito de fade out
+        fraseEl.style.opacity = '0';
+        fraseEl.style.transform = 'translateY(-10px)';
+        emojiEl.style.transform = 'scale(0.5)';
+
+        setTimeout(() => {
+            const indice = Math.floor(Math.random() * frases.length);
+            fraseEl.textContent = frases[indice].texto;
+            emojiEl.textContent = frases[indice].emoji;
+
+            // Efeito de fade in
+            fraseEl.style.opacity = '1';
+            fraseEl.style.transform = 'translateY(0)';
+            emojiEl.style.transform = 'scale(1)';
+        }, 400);
+
+        // Brilho rápido no topo
+        topBar.style.boxShadow = '0 0 40px rgba(198,169,98,0.5)';
+        setTimeout(() => {
+            topBar.style.boxShadow = 'none';
+        }, 600);
+    }
+
+    // Troca automática a cada 25 segundos
+    setInterval(trocarFrase, 25000);
+
+    // ========== SCROLL SUAVE ==========
+    function scrollToSection(id, linkEl) {
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Atualiza menu ativo
+        document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+        if (linkEl) linkEl.classList.add('active');
+    }
+
+    // ========== CALCULADORA ==========
+    function calcularTudo() {
+        const peso = parseFloat(document.getElementById('calcPeso').value);
+        const alturaCm = parseFloat(document.getElementById('calcAltura').value);
+        const idade = parseInt(document.getElementById('calcIdade').value);
+        const sexo = document.getElementById('calcSexo').value;
+
+        if (!peso || !alturaCm || !idade || peso <= 0 || alturaCm <= 0 || idade <= 0) {
+            mostrarToast('⚠️ Preencha todos os campos corretamente.');
+            return;
+        }
+
+        const alturaM = alturaCm / 100;
+        const imc = peso / (alturaM * alturaM);
+        const pesoMin = 18.5 * (alturaM * alturaM);
+        const pesoMax = 24.9 * (alturaM * alturaM);
+
+        // TMB (Harris-Benedict)
+        let tmb;
+        if (sexo === 'feminino') {
+            tmb = 655.1 + (9.563 * peso) + (1.85 * alturaCm) - (4.676 * idade);
+        } else {
+            tmb = 66.5 + (13.75 * peso) + (5.003 * alturaCm) - (6.75 * idade);
+        }
+
+        const metaKcal = tmb * 1.55 + 500; // Moderadamente ativo + superávit de 500kcal
+
+        let classificacao = '';
+        let corClassif = '';
+        if (imc < 18.5) {
+            classificacao = 'Abaixo do peso ideal';
+            corClassif = 'var(--petroleo)';
+        } else if (imc < 24.9) {
+            classificacao = 'Peso normal (saudável)';
+            corClassif = '#2D8B4E';
+        } else if (imc < 29.9) {
+            classificacao = 'Sobrepeso';
+            corClassif = 'var(--dourado-escuro)';
+        } else {
+            classificacao = 'Obesidade';
+            corClassif = '#C0392B';
+        }
+
+        document.getElementById('resIMC').textContent = imc.toFixed(1) + ' kg/m²';
+        document.getElementById('resClassif').textContent = classificacao;
+        document.getElementById('resClassif').style.color = corClassif;
+        document.getElementById('resPesoMin').textContent = pesoMin.toFixed(1) + ' kg';
+        document.getElementById('resPesoMax').textContent = pesoMax.toFixed(1) + ' kg';
+        document.getElementById('resTMB').textContent = Math.round(tmb) + ' kcal/dia';
+        document.getElementById('resMetaKcal').textContent = Math.round(metaKcal) + ' kcal/dia';
+
+        let diagnostico = '';
+        if (imc < 18.5) {
+            diagnostico =
+                `✨ Carol, você está ${(pesoMin - peso).toFixed(1)} kg abaixo do peso ideal mínimo. Seu corpo anseia por mais massa magra! Nosso plano foi feito sob medida para você.`;
+        } else if (imc < 24.9) {
+            diagnostico =
+                '🌟 Você já está na faixa saudável! Se deseja ganhar mais curvas e definição, nosso plano de superávit controlado é perfeito.';
+        } else {
+            diagnostico =
+                '💡 Seu IMC está acima do ideal. Recomendo focar em hipertrofia com leve déficit ou manutenção. Converse com seu profissional de saúde.';
+        }
+        document.getElementById('resDiagnostico').textContent = diagnostico;
+
+        document.getElementById('resultadoBox').classList.add('show');
+        document.getElementById('calculadora').scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        mostrarToast('✅ Cálculos atualizados com sucesso!');
+    }
+
+    // ========== CHECKLIST DE TREINO ==========
+    const treinosState = {
+        treinoA: false,
+        treinoB: false,
+        treinoC: false
+    };
+
+    // Carregar estado do localStorage
+    function carregarTreinos() {
+        const saved = localStorage.getItem('carol_treinos');
+        if (saved) {
+            const state = JSON.parse(saved);
+            if (state.treinoA) aplicarConcluido('treinoA');
+            if (state.treinoB) aplicarConcluido('treinoB');
+            if (state.treinoC) aplicarConcluido('treinoC');
+            atualizarProgresso();
+        }
+    }
+
+    function aplicarConcluido(id) {
+        const card = document.getElementById(id);
+        if (card) {
+            card.classList.add('concluido');
+            const btn = card.querySelector('.check-btn');
+            const iconSpan = btn.querySelector('.icon-check');
+            iconSpan.textContent = '●';
+            btn.innerHTML = '<span class="icon-check">✅</span> Treino Concluído!';
+            const fillBar = card.querySelector('.progresso-bar .fill');
+            if (fillBar) fillBar.style.width = '100%';
+            treinosState[id] = true;
+        }
+    }
+
+    function marcarTreino(id, btn) {
+        const card = document.getElementById(id);
+        const iconSpan = btn.querySelector('.icon-check');
+        const fillBar = card.querySelector('.progresso-bar .fill');
+
+        if (card.classList.contains('concluido')) {
+            // Desmarcar
+            card.classList.remove('concluido');
+            iconSpan.textContent = '○';
+            btn.innerHTML = '<span class="icon-check">○</span> Marcar como concluído';
+            if (fillBar) fillBar.style.width = '0%';
+            treinosState[id] = false;
+            mostrarToast('🔄 Treino desmarcado. Você pode reconcluir depois.');
+        } else {
+            // Marcar como concluído
+            card.classList.add('concluido');
+            iconSpan.textContent = '●';
+            btn.innerHTML = '<span class="icon-check">✅</span> Treino Concluído!';
+            if (fillBar) fillBar.style.width = '100%';
+            treinosState[id] = true;
+            mostrarToast('🎉 Arrasou, Carol! Mais um treino concluído com sucesso!');
+        }
+
+        salvarTreinos();
+        atualizarProgresso();
+    }
+
+    function salvarTreinos() {
+        localStorage.setItem('carol_treinos', JSON.stringify(treinosState));
+    }
+
+    function resetarTreinos() {
+        ['treinoA', 'treinoB', 'treinoC'].forEach(id => {
+            const card = document.getElementById(id);
+            if (card) {
+                card.classList.remove('concluido');
+                const btn = card.querySelector('.check-btn');
+                btn.innerHTML = '<span class="icon-check">○</span> Marcar como concluído';
+                const fillBar = card.querySelector('.progresso-bar .fill');
+                if (fillBar) fillBar.style.width = '0%';
+                treinosState[id] = false;
+            }
+        });
+        salvarTreinos();
+        atualizarProgresso();
+        mostrarToast('🔄 Todos os treinos foram resetados. Nova semana, nova energia!');
+    }
+
+    function atualizarProgresso() {
+        const concluidos = Object.values(treinosState).filter(v => v === true).length;
+        document.getElementById('progressoTexto').textContent = `${concluidos} de 3 treinos concluídos`;
+        const percentual = (concluidos / 3) * 100;
+        document.getElementById('progressoGeral').style.width = percentual + '%';
+
+        if (concluidos === 3) {
+            mostrarToast('🏆 SEMANA COMPLETA! Você é incrível, Carol Lindíssima!');
+        }
+    }
+
+    // ========== DOWNLOAD DA DIETA ==========
+    function baixarDieta() {
+        const dietaTexto = `PLANO ALIMENTAR — DA CAROL LINDÍSSIMA
+        ====================================
+        Objetivo: Ganho de peso saudável (2.500 a 2.800 kcal/dia)
+        Refeições: 5-6 por dia | Superávit calórico inteligente
+
+        ———————————————
+        SEGUNDA-FEIRA
+        ———————————————
+        Café (7h): 2 ovos mexidos + pão integral + 1/2 abacate + leite integral (200ml)
+        Lanche (10h): Iogurte grego + granola + mel
+        Almoço (13h): 150g frango grelhado + arroz integral + feijão + legumes salteados + azeite
+        Lanche (16h): Shake hipercalórico caseiro (banana + leite + pasta de amendoim + aveia)
+        Jantar (19h30): Sopa cremosa de legumes + frango desfiado + azeite + pão integral
+        Ceia (21h30): Leite morno com mel e canela
+
+        ———————————————
+        TERÇA-FEIRA
+        ———————————————
+        Café (7h): Panqueca de banana e aveia + mel + iogurte natural
+        Lanche (10h): Pasta de amendoim + banana + leite
+        Almoço (13h): Peixe grelhado + purê de batata doce + brócolis + azeite
+        Lanche (16h): Mix de castanhas + frutas secas + iogurte
+        Jantar (19h30): Omelete com legumes + pão integral + queijo
+        Ceia (21h30): Iogurte + aveia + pasta de amendoim
+
+        ———————————————
+        QUARTA-FEIRA (Dia de Treino)
+        ———————————————
+        Café (7h): Omelete com queijo + pão integral + fruta + leite
+        Lanche (10h): Shake hipercalórico caseiro
+        Almoço (13h): Carne vermelha magra + arroz integral + salada colorida + azeite
+        Lanche (16h): Tapioca com ovo e queijo
+        Jantar (19h30): Wrap de frango + salada + queijo cremoso
+        Ceia (21h30): Leite + banana amassada com canela
+
+        ———————————————
+        QUINTA-FEIRA
+        ———————————————
+        Café (7h): 2 ovos mexidos + pão integral + abacate + leite
+        Lanche (10h): Iogurte grego + mel + castanhas
+        Almoço (13h): 150g frango + arroz integral + feijão + legumes
+        Lanche (16h): Fruta + pasta de amendoim + leite
+        Jantar (19h30): Sopa de legumes + frango desfiado + azeite
+        Ceia (21h30): Leite morno com mel
+
+        ———————————————
+        SEXTA-FEIRA (Dia de Treino)
+        ———————————————
+        Café (7h): Panqueca de banana + aveia + mel + leite
+        Lanche (10h): Shake hipercalórico caseiro
+        Almoço (13h): Peixe ou frango + batata doce + legumes + azeite
+        Lanche (16h): Tapioca com ovo + queijo
+        Jantar (19h30): Omelete generoso + pão integral + salada
+        Ceia (21h30): Iogurte + aveia + pasta de amendoim
+
+        ———————————————
+        SÁBADO E DOMINGO
+        ———————————————
+        Café (8h): Ovos + pão integral + fruta + leite
+        Lanche (10h30): Fruta + oleaginosas
+        Almoço (13h): Proteína à escolha + carboidrato + vegetais + azeite
+        Lanche (16h): Shake hipercalórico ou sanduíche natural reforçado
+        Jantar (19h30): Refeição leve: sopa, omelete ou wrap
+        Ceia (21h30): Leite morno ou iogurte
+
+        ====================================
+        SHAKE HIPERCALÓRICO CASEIRO:
+        300ml leite integral + 1 banana + 1 colher (sopa) pasta de amendoim
+        + 2 colheres (sopa) aveia + 1 colher (sopa) mel
+        Bater no liquidificador. ≈ 550-650 kcal.
+        ====================================
+        DICAS:
+        - Beba 2L+ de água por dia
+        - Coma devagar e mastigue bem
+        - Evite pular refeições
+        - Prepare marmitas com antecedência
+        - Durma 7-9h por noite
+
+        Carol, você é lindíssima. Alimente-se com amor. ❤️
+        `;
+
+        const blob = new Blob([dietaTexto], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'Plano_Alimentar_Carol_Lindissima.txt';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+        mostrarToast('📥 Dieta baixada com sucesso! Boa alimentação, Carol!');
+    }
+
+    // ========== TOAST ==========
+    function mostrarToast(mensagem) {
+        const toast = document.getElementById('toast');
+        toast.textContent = mensagem;
+        toast.classList.add('show');
+        clearTimeout(toast._timeout);
+        toast._timeout = setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    }
+
+    // ========== INICIALIZAÇÃO ==========
+    document.addEventListener('DOMContentLoaded', () => {
+        carregarTreinos();
+        // Calcular automaticamente ao carregar se houver valores padrão
+        calcularTudo();
+    });
+
+    // ========== SPARKLES NO TOPO ==========
+    function criarSparkles() {
+        const topBar = document.getElementById('topBar');
+        for (let i = 0; i < 8; i++) {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.animationDelay = Math.random() * 3 + 's';
+            sparkle.style.animationDuration = (2 + Math.random() * 3) + 's';
+            topBar.appendChild(sparkle);
+        }
+    }
+    criarSparkles();
+
+    console.log('✨ Da Carol Lindíssima — Página carregada com sucesso!');
+    console.log('💎 Super Fisioterapeuta & Super Professora de Academia');
+    console.log('🌸 Pronta para transformar sua jornada!');
+</script>
+</body>
+</html>
